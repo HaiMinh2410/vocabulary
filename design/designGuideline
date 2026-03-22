@@ -1,0 +1,110 @@
+🎯 BRAND GUIDELINES (Dashboard UI System)
+1. 🧠 Brand Personality
+Hiện đại (Modern) – dùng layout sạch, nhiều khoảng trắng
+Thân thiện (Human-centered) – avatar, hình người, màu mềm
+Data-driven – nhiều biểu đồ, số liệu rõ ràng
+Productivity-focused – tập trung vào hiệu suất & quản lý công việc
+2. 🎨 Color System
+Primary Palette
+Soft Gradient Brand
+Cam → Hồng: #FF7A5A → #FFB199
+Xanh dương → Tím: #5B9CFF → #8F7CFF
+Vàng nhạt → Kem: #F6D365 → #FDEB71
+
+👉 Dùng cho:
+
+Cards chính (Prioritized tasks, Time tracker)
+Highlight KPI
+Neutral Colors
+Background: #F5F6F8 / #FFFFFF
+Text chính: #1A1A1A
+Text phụ: #7A7A7A
+Border: #E6E8EC
+Semantic Colors
+Success: #4CAF50
+Warning: #FFC107
+Error: #FF4D4F
+Info: #3B82F6
+3. 🔤 Typography
+Font Style
+Sans-serif (gợi ý: Inter, SF Pro, hoặc Poppins)
+Scale
+Heading: 24–32px (Semi-bold)
+Subheading: 16–20px (Medium)
+Body: 14–16px (Regular)
+Caption: 12–13px
+
+👉 Đặc điểm:
+
+Không dùng font quá decorative
+Tracking hơi rộng → cảm giác “clean”
+4. 🧩 UI Components
+Cards
+Bo góc lớn: 16px – 24px
+
+Shadow nhẹ:
+
+0 4px 20px rgba(0,0,0,0.05)
+Background:
+White hoặc gradient mềm
+Buttons
+Rounded (pill shape)
+Primary: nền gradient
+Secondary: nền xám nhạt
+Progress / Charts
+Line chart mềm (curved)
+Gradient stroke
+Dot highlight (focus point)
+Avatars
+Bo tròn 100%
+Có thể có ring (progress indicator)
+5. 📐 Layout & Spacing
+Grid
+12-column grid hoặc auto grid cards
+Spacing chuẩn:
+8 / 12 / 16 / 24 / 32
+Layout Style
+Dashboard dạng modular cards
+Sidebar nhẹ hoặc top navigation
+Không dùng divider nặng → dùng spacing
+6. ✨ Visual Style
+Glassmorphism nhẹ (ở UI 2)
+Background blur
+Overlay màu vàng/gradient
+Gradient Usage
+Không quá gắt
+Luôn blend mềm (soft transitions)
+Iconography
+Line icons (stroke ~1.5–2px)
+Style giống:
+Lucide / Feather icons
+7. 📊 Data Visualization
+Ưu tiên:
+Line chart
+Circular progress
+Bar minimal
+Không dùng:
+Chart quá phức tạp
+Màu quá nhiều
+8. 🧑‍💻 UX Principles
+Scan nhanh trong 3 giây
+Data > Decoration
+Tập trung vào action (task, meeting, progress)
+Mỗi card = 1 mục tiêu rõ ràng
+9. 🧬 Brand Voice (nếu dùng cho product)
+Ngắn gọn
+Thân thiện
+Không formal quá mức
+Ví dụ:
+“Welcome back”
+“Your progress this week”
+“Keep going!”
+10. 🚀 Do & Don’t
+✅ Do
+Dùng gradient có kiểm soát
+Giữ UI thoáng
+Highlight thông tin quan trọng
+❌ Don’t
+Overload màu
+Shadow nặng
+Font quá nhiều loại

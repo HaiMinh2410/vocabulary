@@ -1,0 +1,43 @@
+/* Floating Capture Button */
+#vocab-os-capture-btn {
+  position: absolute;
+  z-index: 999999;
+  background: linear-gradient(135deg, #5B9CFF 0%, #8F7CFF 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+#vocab-os-capture-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+#vocab-os-capture-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* State Classes */
+#vocab-os-capture-btn.loading {
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+#vocab-os-capture-btn.success {
+  background: #4CAF50; /* Green success */
+}
+
+#vocab-os-capture-btn.error {
+  background: #FF4D4F;
+}

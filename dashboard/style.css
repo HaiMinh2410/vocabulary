@@ -1,0 +1,545 @@
+/* =========================================================
+   🎯 BRAND GUIDELINES (Dashboard UI System)
+   ========================================================= */
+
+:root {
+    /* Colors: Primary Palette & Soft Gradients */
+    --brand-orange-pink: linear-gradient(135deg, #FF7A5A 0%, #FFB199 100%);
+    --brand-blue-purple: linear-gradient(135deg, #5B9CFF 0%, #8F7CFF 100%);
+    --brand-yellow-cream: linear-gradient(135deg, #F6D365 0%, #FDEB71 100%);
+    
+    /* Colors: Neutral Colors */
+    --bg-body: #F5F6F8;
+    --bg-card: #FFFFFF;
+    --text-primary: #1A1A1A;
+    --text-secondary: #7A7A7A;
+    --border-soft: #E6E8EC;
+
+    /* Colors: Semantic */
+    --semantic-success: #4CAF50;
+    --semantic-warning: #FFC107;
+    --semantic-error: #FF4D4F;
+    --semantic-info: #3B82F6;
+
+    /* Typography */
+    --font-stack: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Layout & Spacing */
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-6: 24px;
+    --space-8: 32px;
+
+    /* Components */
+    --radius-card: 20px; /* 16px-24px scale */
+    --radius-pill: 9999px;
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+}
+
+/* Base Utility Classes */
+.text-dark { color: #1A1A1A !important; }
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =========================================
+   Sidebar Structure
+   ========================================= */
+.sidebar {
+    width: 250px;
+    background-color: var(--bg-card);
+    border-right: 1px solid var(--border-soft);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: var(--space-8);
+    color: var(--text-primary);
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--brand-blue-purple);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Nav Menu */
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    flex: 1;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    border-radius: var(--radius-card); /* Soft rounds */
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.nav-item i {
+    stroke-width: 1.5px;
+}
+
+.nav-item:hover {
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+}
+
+.nav-item.active {
+    background: rgba(91, 156, 255, 0.08);
+    color: var(--semantic-info);
+    font-weight: 600;
+}
+
+/* User Profile */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--border-soft);
+}
+
+.avatar-ring {
+    padding: 2px;
+    border-radius: 100%;
+    background: var(--brand-blue-purple);
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    object-fit: cover;
+    border: 2px solid white;
+    display: block;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.user-status {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* =========================================
+   Main Content Area
+   ========================================= */
+.main-content {
+    flex: 1;
+    padding: var(--space-8);
+    overflow-y: auto;
+}
+
+/* Topbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-8);
+}
+
+.greeting h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.greeting p {
+    color: var(--text-secondary);
+    font-size: 15px;
+}
+
+/* Buttons (Pill shaped) */
+.actions {
+    display: flex;
+    gap: var(--space-3);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--radius-pill);
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn i { stroke-width: 2px; width: 18px; height: 18px; }
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background: var(--brand-blue-purple);
+    color: white;
+}
+
+.btn-secondary {
+    background: #F1F3F5;
+    color: var(--text-primary);
+}
+
+.btn-icon {
+    padding: 10px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    color: var(--text-primary);
+}
+
+.btn-small {
+    padding: 6px 14px;
+    font-size: 13px;
+}
+
+.full-width {
+    width: 100%;
+}
+.mt-auto { margin-top: auto; }
+
+/* =========================================
+   Modular Grid Layout
+   ========================================= */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-6);
+}
+
+/* Cards */
+.card {
+    background: var(--bg-card);
+    border-radius: var(--radius-card);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    overflow: hidden;
+}
+
+/* KPI Stat Cards (With soft gradients) */
+.stat-card {
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.gradient-blue-purple { background: var(--brand-blue-purple); color: white; }
+.gradient-orange-pink { background: var(--brand-orange-pink); color: white; }
+.gradient-yellow-cream { background: var(--brand-yellow-cream); color: var(--text-primary); }
+
+.stat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 0.95;
+    z-index: 2;
+}
+
+.icon-wrap {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px;
+    border-radius: 12px;
+    display: flex;
+}
+
+.stat-value {
+    font-size: 36px;
+    font-weight: 700;
+    margin-top: var(--space-2);
+    z-index: 2;
+}
+
+.stat-trend {
+    font-size: 14px;
+    opacity: 0.85;
+    z-index: 2;
+}
+
+/* Glassmorphism Details */
+.ambient-glow {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    bottom: -30px;
+    right: -30px;
+    border-radius: 100%;
+    filter: blur(40px);
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.bg-blue { background: #fff; }
+.bg-orange { background: #fff; }
+.bg-yellow { background: #F6D365; }
+
+/* =========================================
+   Feed / Library View
+   ========================================= */
+.feed-card {
+    grid-column: span 8;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-6);
+}
+
+.card-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.feed-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+/* Item Card */
+.feed-item {
+    background: var(--bg-card);
+    border-radius: var(--space-4);
+    padding: var(--space-4);
+    position: relative;
+    border: 1px solid var(--border-soft);
+    transition: border-color 0.2s;
+}
+
+.feed-item:hover {
+    border-color: #d1d5db;
+}
+
+.word-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: 2px;
+}
+
+.word {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--text-primary);
+}
+
+.pos {
+    font-size: 12px;
+    color: var(--text-secondary);
+    background: var(--bg-body);
+    padding: 2px 10px;
+    border-radius: var(--radius-pill);
+    font-weight: 500;
+}
+
+.translation {
+    color: var(--semantic-info);
+    font-weight: 500;
+    margin-bottom: var(--space-3);
+    font-size: 15px;
+}
+
+.context-box {
+    background: rgba(245, 246, 248, 0.6);
+    border-radius: 8px;
+    padding: 12px 14px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.quote-icon {
+    width: 16px;
+    height: 16px;
+    color: #cbd5e1;
+    flex-shrink: 0;
+}
+
+.context {
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.context strong {
+    color: var(--text-primary);
+    font-weight: 600;
+    background: rgba(253, 235, 113, 0.3); /* highlight color */
+    padding: 0 4px;
+    border-radius: 4px;
+}
+
+.source-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+.source-link i { width: 12px; height: 12px; }
+
+/* Status Badges */
+.badge {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-new { background: rgba(59, 130, 246, 0.1); color: var(--semantic-info); }
+.badge-review { background: rgba(255, 193, 7, 0.15); color: #B45309; }
+.badge-mastered { background: rgba(76, 175, 80, 0.1); color: var(--semantic-success); }
+
+
+/* =========================================
+   Action Card (Data Vis)
+   ========================================= */
+.action-card {
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.action-card h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.action-desc {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: var(--space-4);
+}
+
+/* Circular Progress Chart */
+.circular-progress-wrapper {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: var(--space-4) auto;
+}
+
+.circular-chart {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: var(--bg-body);
+    stroke-width: 2.5;
+}
+
+.circle {
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    /* Soft curve & blend */
+    stroke: url(#gradient); 
+    animation: progress 1.5s ease-out forwards;
+}
+
+.circular-chart.primary .circle {
+    stroke: #5B9CFF; /* fallback */
+}
+
+.percentage {
+    fill: var(--text-primary);
+    font-family: var(--font-stack);
+    font-size: 8px;
+    font-weight: 700;
+    text-anchor: middle;
+}
+
+.progress-label {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+@keyframes progress {
+    0% { stroke-dasharray: 0 100; }
+}
+
+/* Responsive Rules */
+@media (max-width: 1024px) {
+    .stat-card { grid-column: span 12; }
+    .feed-card { grid-column: span 12; }
+    .action-card { grid-column: span 12; }
+    .sidebar { width: 80px; }
+    .logo-text, .nav-item span, .user-info { display: none; }
+}

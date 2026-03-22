@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vocabulary OS - Settings</title>
+  <link rel="stylesheet" href="options.css">
+  <!-- Same Inter font as the dashboard -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h2>⚙️ Vocabulary OS Settings</h2>
+      <p>Configure your API integrations below to enable context-aware capture.</p>
+    </header>
+
+    <div class="card">
+      <h3>Supabase Configuration</h3>
+      <div class="form-group">
+        <label for="supabaseUrl">Supabase URL</label>
+        <input type="url" id="supabaseUrl" placeholder="https://xxxx.supabase.co">
+      </div>
+      <div class="form-group">
+        <label for="supabaseKey">Supabase Anon Key</label>
+        <input type="password" id="supabaseKey" placeholder="eyJhbGci...">
+      </div>
+      <div class="form-group">
+        <label for="userId">Your User ID (UUID)</label>
+        <input type="text" id="userId" placeholder="Optional: To link captures to your user account">
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Hugging Face Configuration</h3>
+      <div class="form-group">
+        <label for="hfKey">Hugging Face Access Token</label>
+        <input type="password" id="hfKey" placeholder="hf_xxxxxxxxxxxxxxxxxxx">
+      </div>
+      <div class="form-group">
+        <label for="hfModel">LLaMA Model Name</label>
+        <input type="text" id="hfModel" value="meta-llama/Meta-Llama-3-8B-Instruct" placeholder="e.g. meta-llama/Meta-Llama-3-8B-Instruct">
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="saveBtn" class="btn btn-primary">Save Settings</button>
+      <span id="statusMessage" class="status-msg"></span>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

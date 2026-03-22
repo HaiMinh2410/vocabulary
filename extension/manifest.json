@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Vocabulary OS",
+  "version": "1.0",
+  "description": "Context-aware vocabulary capture and learning system.",
+  "permissions": [
+    "storage",
+    "contextMenus",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://api-inference.huggingface.co/*",
+    "https://router.huggingface.co/*",
+    "https://*.supabase.co/*",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["content.css"],
+      "js": ["content.js"]
+    }
+  ],
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  }
+}
