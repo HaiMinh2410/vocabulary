@@ -3,88 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <title>Vocab OS | Cài đặt</title>
-    <link rel="stylesheet" href="tailwind.css">
+    <link rel="stylesheet" href="options.css">
     <!-- Same Inter font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-indigo-50/50 font-sans min-h-screen">
-    <div class="max-w-3xl mx-auto px-6 py-12">
-        <header class="flex items-center gap-6 mb-12 animate-in fade-in slide-in-from-top-4 duration-500">
-            <div class="w-16 h-16 flex items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white shadow-xl shadow-indigo-500/20">
-                <i data-lucide="settings" class="w-8 h-8"></i>
+<body>
+    <div class="max-w-3xl">
+        <header class="flex items-center gap-6 mb-12">
+            <div class="header-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
             </div>
             <div>
-                <h1 class="text-3xl font-black text-slate-800 tracking-tight">Cài đặt Vocab OS</h1>
+                <h1 class="h1-title tracking-tight text-slate-800">Cài đặt Vocab OS</h1>
                 <p class="text-slate-500 font-medium mt-1">Cấu hình các API để kích hoạt tính năng phân tích ngữ cảnh.</p>
             </div>
         </header>
 
         <div class="space-y-8">
             <!-- Supabase Config -->
-            <section class="bg-white rounded-3xl p-8 shadow-sm border border-indigo-100 flex flex-col gap-6 group hover:shadow-md transition-shadow transition-all duration-300">
-                <div class="flex items-center gap-3 border-b border-slate-50 pb-4 mb-2">
-                    <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center">
-                        <i data-lucide="database" class="w-5 h-5"></i>
+            <section class="section-card">
+                <div class="section-header">
+                    <div class="icon-box bg-emerald-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
                     </div>
                     <div>
-                        <h2 class="text-xl font-bold text-slate-800">Cấu hình Supabase</h2>
-                        <p class="text-xs text-slate-400 font-bold uppercase tracking-widest mt-0.5">Nơi lưu trữ từ vựng</p>
+                        <h2 class="h1-title" style="font-size: 1.25rem;">Cấu hình Supabase</h2>
+                        <p class="version-text mt-1">Nơi lưu trữ từ vựng</p>
                     </div>
                 </div>
                 
-                <div class="space-y-5">
-                    <div class="flex flex-col gap-2">
-                        <label for="supabaseUrl" class="text-sm font-bold text-slate-700 ml-1">Supabase URL</label>
-                        <input type="url" id="supabaseUrl" class="w-full px-5 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-300" placeholder="https://xxxx.supabase.co">
+                <div class="space-y-5" style="margin-top: 1.5rem;">
+                    <div class="flex flex-col">
+                        <label for="supabaseUrl" class="input-label">Supabase URL</label>
+                        <input type="url" id="supabaseUrl" class="input-field" placeholder="https://xxxx.supabase.co">
                     </div>
-                    <div class="flex flex-col gap-2">
-                        <label for="supabaseKey" class="text-sm font-bold text-slate-700 ml-1">Supabase Anon Key</label>
-                        <input type="password" id="supabaseKey" class="w-full px-5 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-300" placeholder="eyJhbGci...">
+                    <div class="flex flex-col">
+                        <label for="supabaseKey" class="input-label">Supabase Anon Key</label>
+                        <input type="password" id="supabaseKey" class="input-field" placeholder="eyJhbGci...">
                     </div>
-                    <div class="flex flex-col gap-2">
-                        <label for="userId" class="text-sm font-bold text-slate-700 ml-1">Mã định danh người dùng (UUID)</label>
-                        <input type="text" id="userId" class="w-full px-5 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-300" placeholder="Optional: Để liên kết với tài khoản của bạn">
+                    <div class="flex flex-col">
+                        <label for="userId" class="input-label">Mã định danh người dùng (UUID)</label>
+                        <input type="text" id="userId" class="input-field" placeholder="Optional: Để liên kết với tài khoản của bạn">
                     </div>
                 </div>
             </section>
 
             <!-- Hugging Face Config -->
-            <section class="bg-white rounded-3xl p-8 shadow-sm border border-indigo-100 flex flex-col gap-6 group hover:shadow-md transition-shadow transition-all duration-300">
-                <div class="flex items-center gap-3 border-b border-slate-50 pb-4 mb-2">
-                    <div class="w-10 h-10 bg-yellow-50 text-yellow-600 rounded-xl flex items-center justify-center">
-                        <i data-lucide="sparkles" class="w-5 h-5"></i>
+            <section class="section-card">
+                <div class="section-header">
+                    <div class="icon-box bg-yellow-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
                     </div>
                     <div>
-                        <h2 class="text-xl font-bold text-slate-800">Cấu hình AI (Hugging Face)</h2>
-                        <p class="text-xs text-slate-400 font-bold uppercase tracking-widest mt-0.5">Động cơ phân tích ngôn ngữ</p>
+                        <h2 class="h1-title" style="font-size: 1.25rem;">Cấu hình AI (Hugging Face)</h2>
+                        <p class="version-text mt-1">Động cơ phân tích ngôn ngữ</p>
                     </div>
                 </div>
 
-                <div class="space-y-5">
-                    <div class="flex flex-col gap-2">
-                        <label for="hfKey" class="text-sm font-bold text-slate-700 ml-1">Hugging Face Access Token</label>
-                        <input type="password" id="hfKey" class="w-full px-5 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-300" placeholder="hf_xxxxxxxxxxxxxxxxxxx">
+                <div class="space-y-5" style="margin-top: 1.5rem;">
+                    <div class="flex flex-col">
+                        <label for="hfKey" class="input-label">Hugging Face Access Token</label>
+                        <input type="password" id="hfKey" class="input-field" placeholder="hf_xxxxxxxxxxxxxxxxxxx">
                     </div>
-                    <div class="flex flex-col gap-2">
-                        <label for="hfModel" class="text-sm font-bold text-slate-700 ml-1">Mô hình LLaMA</label>
-                        <input type="text" id="hfModel" class="w-full px-5 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-300" value="meta-llama/Meta-Llama-3-8B-Instruct" placeholder="e.g. meta-llama/Meta-Llama-3-8B-Instruct">
+                    <div class="flex flex-col">
+                        <label for="hfModel" class="input-label">Mô hình LLaMA</label>
+                        <input type="text" id="hfModel" class="input-field" value="meta-llama/Meta-Llama-3-8B-Instruct" placeholder="e.g. meta-llama/Meta-Llama-3-8B-Instruct">
                     </div>
                 </div>
             </section>
 
-            <div class="flex items-center justify-between pt-4 pb-12">
+            <div class="flex items-center justify-between" style="padding-top: 1rem; padding-bottom: 3rem;">
                 <div class="flex items-center gap-2">
-                    <div id="statusIcon" class="hidden"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-500"></i></div>
+                    <div id="statusIcon" class="hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                    </div>
                     <span id="statusMessage" class="text-sm font-bold text-slate-500"></span>
                 </div>
-                <button id="saveBtn" class="flex items-center justify-center gap-3 px-10 py-5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-black text-lg shadow-2xl shadow-indigo-600/30 transition-all hover:scale-[1.03] active:scale-95">
-                    <i data-lucide="save" class="w-6 h-6"></i> Lưu cài đặt
+                <button id="saveBtn" class="btn-save">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+                    Lưu cài đặt
                 </button>
             </div>
         </div>
     </div>
 
-    <script src="../lucide.min.js"></script>
     <script src="options.js"></script>
 </body>
 </html>

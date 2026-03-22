@@ -1,9 +1,7 @@
 // Load settings on page load
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Initialize Lucide Icons
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
+    // Lucide initialization removed
+
 
     // 2. Load stored settings (Chrome Storage)
     chrome.storage.local.get(['supabaseUrl', 'supabaseKey', 'userId', 'hfKey', 'hfModel'], (items) => {
