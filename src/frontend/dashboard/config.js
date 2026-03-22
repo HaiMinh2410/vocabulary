@@ -1,4 +1,0 @@
-const CONFIG = {
-  SUPABASE_URL: "https://dicwzhbgimybwxatdsdp.supabase.co",
-  SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRpY3d6aGJnaW15Ynd4YXRkc2RwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5MTk0OTksImV4cCI6MjA4OTQ5NTQ5OX0.U9YU3kSRswFzuY01CMeiwybbGYTwNE3TTYbnWUOc3no"
-};

@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #5B9CFF;
+  --color-brand-purple: #8F7CFF;
+  --color-brand-orange: #FF7A5A;
+  --color-brand-pink: #FFB199;
+  --color-brand-yellow: #F6D365;
+  --color-bg-body: #F5F6F8;
+  --color-bg-card: #FFFFFF;
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #7A7A7A;
+  --color-border-soft: #E6E8EC;
+  
+  --radius-card: 24px;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--color-bg-body)] text-[var(--color-text-primary)] antialiased;
+  }
+}
+
+@layer components {
+  .circle-animate {
+    animation: progress-spin 1.5s ease-out forwards;
+  }
+}
+
+@keyframes progress-spin {
+  0% { stroke-dasharray: 0 100; }
+}

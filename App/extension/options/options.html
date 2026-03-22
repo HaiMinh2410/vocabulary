@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Vocab OS | Cài đặt</title>
+    <link rel="stylesheet" href="tailwind.css">
+    <!-- Same Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-indigo-50/50 font-sans min-h-screen">
+    <div class="max-w-3xl mx-auto px-6 py-12">
+        <header class="flex items-center gap-6 mb-12 animate-in fade-in slide-in-from-top-4 duration-500">
+            <div class="w-16 h-16 flex items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white shadow-xl shadow-indigo-500/20">
+                <i data-lucide="settings" class="w-8 h-8"></i>
+            </div>
+            <div>
+                <h1 class="text-3xl font-black text-slate-800 tracking-tight">Cài đặt Vocab OS</h1>
+                <p class="text-slate-500 font-medium mt-1">Cấu hình các API để kích hoạt tính năng phân tích ngữ cảnh.</p>
+            </div>
+        </header>
+
+        <div class="space-y-8">
+            <!-- Supabase Config -->
+            <section class="bg-white rounded-3xl p-8 shadow-sm border border-indigo-100 flex flex-col gap-6 group hover:shadow-md transition-shadow transition-all duration-300">
+                <div class="flex items-center gap-3 border-b border-slate-50 pb-4 mb-2">
+                    <div class="w-10 h-10 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center">
+                        <i data-lucide="database" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-800">Cấu hình Supabase</h2>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-widest mt-0.5">Nơi lưu trữ từ vựng</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-5">
+                    <div class="flex flex-col gap-2">
+                        <label for="supabaseUrl" class="text-sm font-bold text-slate-700 ml-1">Supabase URL</label>
+                        <input type="url" id="supabaseUrl" class="w-full px-5 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-300" placeholder="https://xxxx.supabase.co">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="supabaseKey" class="text-sm font-bold text-slate-700 ml-1">Supabase Anon Key</label>
+                        <input type="password" id="supabaseKey" class="w-full px-5 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-300" placeholder="eyJhbGci...">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="userId" class="text-sm font-bold text-slate-700 ml-1">Mã định danh người dùng (UUID)</label>
+                        <input type="text" id="userId" class="w-full px-5 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-300" placeholder="Optional: Để liên kết với tài khoản của bạn">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hugging Face Config -->
+            <section class="bg-white rounded-3xl p-8 shadow-sm border border-indigo-100 flex flex-col gap-6 group hover:shadow-md transition-shadow transition-all duration-300">
+                <div class="flex items-center gap-3 border-b border-slate-50 pb-4 mb-2">
+                    <div class="w-10 h-10 bg-yellow-50 text-yellow-600 rounded-xl flex items-center justify-center">
+                        <i data-lucide="sparkles" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-800">Cấu hình AI (Hugging Face)</h2>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-widest mt-0.5">Động cơ phân tích ngôn ngữ</p>
+                    </div>
+                </div>
+
+                <div class="space-y-5">
+                    <div class="flex flex-col gap-2">
+                        <label for="hfKey" class="text-sm font-bold text-slate-700 ml-1">Hugging Face Access Token</label>
+                        <input type="password" id="hfKey" class="w-full px-5 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-300" placeholder="hf_xxxxxxxxxxxxxxxxxxx">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="hfModel" class="text-sm font-bold text-slate-700 ml-1">Mô hình LLaMA</label>
+                        <input type="text" id="hfModel" class="w-full px-5 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-4 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all placeholder:text-slate-300" value="meta-llama/Meta-Llama-3-8B-Instruct" placeholder="e.g. meta-llama/Meta-Llama-3-8B-Instruct">
+                    </div>
+                </div>
+            </section>
+
+            <div class="flex items-center justify-between pt-4 pb-12">
+                <div class="flex items-center gap-2">
+                    <div id="statusIcon" class="hidden"><i data-lucide="check-circle" class="w-5 h-5 text-emerald-500"></i></div>
+                    <span id="statusMessage" class="text-sm font-bold text-slate-500"></span>
+                </div>
+                <button id="saveBtn" class="flex items-center justify-center gap-3 px-10 py-5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl font-black text-lg shadow-2xl shadow-indigo-600/30 transition-all hover:scale-[1.03] active:scale-95">
+                    <i data-lucide="save" class="w-6 h-6"></i> Lưu cài đặt
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../lucide.min.js"></script>
+    <script src="options.js"></script>
+</body>
+</html>
