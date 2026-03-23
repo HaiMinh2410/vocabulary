@@ -41,7 +41,7 @@ export const FeedList = ({ items }: FeedListProps) => {
           ? <strong key={i} className="text-slate-900 font-bold bg-yellow-400/20 px-1 rounded shadow-sm ring-1 ring-yellow-400/20">{part}</strong>
           : part
       );
-    } catch (e) {
+    } catch {
       return sentence;
     }
   };
@@ -63,7 +63,7 @@ export const FeedList = ({ items }: FeedListProps) => {
         }
 
         let domain = 'Nguồn chưa xác định';
-        try { if(item.source_url) domain = new URL(item.source_url).hostname.replace('www.', ''); } catch(e) {}
+        try { if(item.source_url) domain = new URL(item.source_url).hostname.replace('www.', ''); } catch {}
 
         return (
           <div key={item.id} className="group p-5 bg-white rounded-[24px] border border-slate-100 hover:border-blue-500/30 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 relative overflow-hidden">
